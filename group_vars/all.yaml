@@ -9,45 +9,37 @@ pacman_packages:
   - helix
   - mako
   - pcmanfm
-
   - hyprpaper
   - hyprlock
   - hypridle
   - hyprpicker
   - xdg-desktop-portal-hyprland
   - hyprpolkitagent
-
   - thunderbird
   - keepassxc
-
   - bottom
   - brightnessctl
   - udiskie
   - fprintd
   - zellij
-
   - stow
   - fzf
   - satty
   - grim
   - wl-clipboard
-
   - fd
   - ripgrep
   - zoxide
   - jq
   - resvg
-
   - 7zip
   - tree
-
   - ttf-sourcecodepro-nerd
   - mpv-mpris
   - batsignal
-
   - podman
 
 
 dotfiles_repo: "https://github.com/tar-valon/dotfiles.git"
-dotfiles_dest: "/home/{{ user }}/dotfiles"
+dotfiles_dest: "{{ ansible_env.HOME }}/dotfiles"
 dotfiles_package: home
