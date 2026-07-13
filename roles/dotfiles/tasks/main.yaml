@@ -1,0 +1,20 @@
+---
+- name: Clone dotfiles repository
+  ansible.builtin.git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_dest }}"
+    update: true
+    version: main
+  become: false
+
+- name: Stow dotfiles and adopt existing files
+  ansible.builtin.command:
+    cmd: stow --adopt home
+    chdir: "{{ dotfiles_dest }}"
+  become: false
+
+- name: Restore dotfiles repository
+  ansible.builtin.command:
+    cmd: git restore .
+    chdir: "{{ dotfiles_dest }}"
+  become: false

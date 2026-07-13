@@ -1,0 +1,7 @@
+---
+- name: Configure Arch
+  hosts: arch
+
+  roles:
+    - common
+    - dotfiles
